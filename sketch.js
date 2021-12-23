@@ -1,10 +1,12 @@
 var sea,ship;
 var seaImg,shipImg;
+var fish, fish_image;
 
 function preload(){
   seaImg = loadImage("sea.png");
   shipImg1 = loadAnimation("ship1.png","ship1.png",
                             "ship2.png","ship1.png");
+  fish_image = loadImage("fish.png");
 }
 
 function setup(){
@@ -22,6 +24,9 @@ function setup(){
   ship.addAnimation("movingShip",shipImg1);
   ship.scale =0.25;
   
+  fish = createSprite(140, 365, 25, 25);
+  fish.addImage("fish", fish_image);
+  fish.scale = 0.2;
 }
 
 function draw() {
@@ -33,6 +38,9 @@ function draw() {
   if(sea.x < 0){
     sea.x = sea.width/8;
   }
-    
+  if(fish.x < -25){
+    fish.x = 445;
+  }
+    fish.velocityX = -0.8;
   drawSprites();
 }
