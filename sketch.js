@@ -30,7 +30,7 @@ function setup(){
   fish.addImage("fish", fish_image);
   fish.scale = 0.2;
   
-  fish2 = createSprite(140, 365, 25, 25);
+  fish2 = createSprite(345, 322, 25, 25);
   fish2.addImage("myfish", fish_image2);
   fish2.scale = 0.2;
 }
